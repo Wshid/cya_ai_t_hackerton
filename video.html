@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>CYA.AI- Artificial Intelligence Integrated Market Management Solution</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/carousel.css" rel="stylesheet">
+    <link href="css/menu.css?ver=5" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">
+    <link href="css/custom_navbar.css" rel="stylesheet">
+    
+    <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-1.28.3.js"></script>
+    <!-- regression.js -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/regression/1.4.0/regression.min.js"></script>
+    
+    
+  </head>
+<!-- NAVBAR
+================================================== -->
+  <body>
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="main.html">CYA.AI</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                    <li><a href="main.html">김주현과 친구들-CYA.AI</a></li>
+                    <li class="active"><a href="video.html">Realtime Video Deeplearning</a></li>
+                    <li><a href="dashboard.html">Bigdata Analysis Dashboard</a></li>
+                    <li><a href="prediction.html">AI Order Prediction</a></li>
+
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+    
+    <div class="jumbotron" style="top: -70px; position: relative;">
+      <div class="container font_white">
+        <h2>Realtime Video Deep-learning: Realtime Customer Buying Pattern Analysis</h2>
+        <p>인공지능의 실시간 영상분석을 통해 품목별 소비자들의 구매 패턴/성향을 파악할 수 있습니다.</p>
+        <p><a class="btn btn-primary btn-lg" href="#analysis2" role="button">Learn more &raquo;</a></p>
+      </div>
+    </div>
+    
+		
+		<div class="container-fluid" style="top: -70px; position: relative;">
+
+			<!-- /.row -->
+
+			<div class="row">
+				<div class="col-sm-9 col-sm-push-3">
+
+					<!-- Image -->
+					<figure class="margin-b-2">
+						<!--<img class="img-responsive" src="http://placehold.it/900x400" alt="">-->
+						<div id="vid2feed" style="width:640px;"></div>
+					</figure>
+          <!--
+					<p class="lead">Lorem ipsum dolor sit amet consect etuer adipi scing elit sed diam nonummy nibh euismod tinunt ut laoreet dolore magna aliquam erat volut. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.</p>
+					<p>Vivamus risus ex, varius et libero quis, placerat rhoncus mi. Aenean sit amet aliquam nibh. Aliquam tortor est, consequat vitae libero at, vehicula mattis tellus. In condimentum consequat tempor. Nullam at lorem semper, ultricies mi et, mollis turpis. Mauris ut leo ac magna dapibus luctus. Mauris mi nibh, ornare et ipsum vel, finibus molestie nulla. Nunc eleifend leo eget ipsum pellentesque, vel varius ipsum placerat. Mauris tincidunt sapien et efficitur commodo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec at pellentesque arcu. Pellentesque justo enim, porttitor a arcu non, mollis venenatis felis.</p>
+					<p>Praesent viverra pellentesque enim, vitae porta erat elementum quis. Maecenas posuere mattis velit rutrum iaculis. Duis non efficitur nibh. Aliquam laoreet risus a nulla auctor interdum. Ut cursus leo eu justo laoreet porttitor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse vitae nisi dictum, vulputate odio sed, blandit tortor. Fusce eu turpis ut mi porta bibendum nec eu libero.</p>
+					<p>Praesent libero sem, feugiat dapibus mattis et, vehicula eu turpis. In vitae consequat leo, quis venenatis justo. Fusce auctor bibendum aliquet. Nullam eu mi lectus. Maecenas risus mauris, feugiat nec ullamcorper non, efficitur et elit. Sed porta tellus ut aliquam auctor. Vivamus id lectus sed tellus cursus sodales sit amet a velit.</p>
+					<p>Quisque eu aliquam leo. Sed feugiat nulla massa, a faucibus nulla sagittis eget. Donec ullamcorper tincidunt risus et pharetra. Vivamus tristique dui metus, vitae gravida nisl volutpat eu. Vivamus dapibus leo sit amet metus luctus dapibus. Vivamus sodales tempor elit, at pellentesque elit eleifend sit amet. Aliquam erat volutpat.</p>
+					<hr>-->
+					<div id="analysis2" align="left"></div>
+					
+
+
+				</div>
+				<div class="col-sm-3 col-sm-pull-9">
+
+					<!-- list group -->
+					<div class="list-group margin-b-3">
+					    <a href="#" class="active list-group-item"><div id="vid2datetime"></div></a>
+					           
+					    <a href="#" class="list-group-item"><div id="vid2ppl"></div></a>
+					    <a href="#" class="list-group-item"><div id="potato"></div></a>
+					    <a href="#" class="list-group-item"><div id="radish"></div></a>
+					</div>
+
+					<!-- Panel -->
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">청과 코너 인원 증감 분석</h4>
+						</div>
+						<div class="panel-body">
+							<p><div id="ch1"></div></p>
+						</div>
+					</div>
+
+					<!-- Panel -->
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">청과 코너 관심 추세 분석</h4>
+						</div>
+						<div class="panel-body">
+							<p><div id="ch2"></div></p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- /.row -->
+			
+			<hr>  
+			
+			<div class="row">
+				<div class="col-sm-9 col-sm-push-3">
+
+					<!-- Image -->
+					<figure class="margin-b-2">
+						<!--<img class="img-responsive" src="http://placehold.it/900x400" alt="">-->
+						<div id="vid1feed" style="width:640px;"></div>
+					</figure>
+          <!--
+					<p class="lead">Lorem ipsum dolor sit amet consect etuer adipi scing elit sed diam nonummy nibh euismod tinunt ut laoreet dolore magna aliquam erat volut. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.</p>
+					<p>Vivamus risus ex, varius et libero quis, placerat rhoncus mi. Aenean sit amet aliquam nibh. Aliquam tortor est, consequat vitae libero at, vehicula mattis tellus. In condimentum consequat tempor. Nullam at lorem semper, ultricies mi et, mollis turpis. Mauris ut leo ac magna dapibus luctus. Mauris mi nibh, ornare et ipsum vel, finibus molestie nulla. Nunc eleifend leo eget ipsum pellentesque, vel varius ipsum placerat. Mauris tincidunt sapien et efficitur commodo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec at pellentesque arcu. Pellentesque justo enim, porttitor a arcu non, mollis venenatis felis.</p>
+					<p>Praesent viverra pellentesque enim, vitae porta erat elementum quis. Maecenas posuere mattis velit rutrum iaculis. Duis non efficitur nibh. Aliquam laoreet risus a nulla auctor interdum. Ut cursus leo eu justo laoreet porttitor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse vitae nisi dictum, vulputate odio sed, blandit tortor. Fusce eu turpis ut mi porta bibendum nec eu libero.</p>
+					<p>Praesent libero sem, feugiat dapibus mattis et, vehicula eu turpis. In vitae consequat leo, quis venenatis justo. Fusce auctor bibendum aliquet. Nullam eu mi lectus. Maecenas risus mauris, feugiat nec ullamcorper non, efficitur et elit. Sed porta tellus ut aliquam auctor. Vivamus id lectus sed tellus cursus sodales sit amet a velit.</p>
+					<p>Quisque eu aliquam leo. Sed feugiat nulla massa, a faucibus nulla sagittis eget. Donec ullamcorper tincidunt risus et pharetra. Vivamus tristique dui metus, vitae gravida nisl volutpat eu. Vivamus dapibus leo sit amet metus luctus dapibus. Vivamus sodales tempor elit, at pellentesque elit eleifend sit amet. Aliquam erat volutpat.</p>
+					<hr>-->
+					<div id="analysis1" align="left"></div>
+					
+
+
+				</div>
+				<div class="col-sm-3 col-sm-pull-9">
+
+					<!-- list group -->
+					<div class="list-group margin-b-3">
+					    <a href="#" class="active list-group-item"><div id="vid1datetime"></div></a>
+					           
+					    <a href="#" class="list-group-item"><div id="vid1ppl"></div></a>
+					    <a href="#" class="list-group-item"><div id="pineapple"></div></a>
+					    <a href="#" class="list-group-item"><div id="tomato"></div></a>
+					</div>
+
+					<!-- Panel -->
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">야채 코너 인원 증감 분석</h4>
+						</div>
+						<div class="panel-body">
+							<p><div id="vg1"></div></p>
+						</div>
+					</div>
+
+					<!-- Panel -->
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">야채 코너 관심 추세 분석</h4>
+						</div>
+						<div class="panel-body">
+							<p><div id="vg2"></div></p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- /.row -->
+			
+			
+
+			<hr>
+			<footer class="margin-tb-3">
+				<div class="row">
+					<div class="col-lg-12">
+						<p>Copyright 시야.에이아이 © 김주현과 친구들-CYA.AI 2017</p>
+					</div>
+				</div>
+			</footer>
+		</div>
+      
+      
+    <div id="map"></div>
+    <div id="panel">
+      <!--<h3>김주현과 친구들 - 인공지능 통합 매장 관리 솔루션</h3>-->
+       <!--<div id="vid2feed" style="width:640px;"></div>-->
+       <!--<div id="analysis2" align="left"></div>-->
+       <!--<div id="vid1feed" style="width:640px;"></div>-->
+       <!--<div id="analysis1" align="left"></div>-->
+       <!--<div id="vid1datetime"></div>
+       <div id="vid1ppl"></div>-->
+       <!--<div id="vid2datetime"></div>-->
+       <!--<div id="vid2ppl"></div>-->
+       <!--<div id="potato"></div>-->
+       <!--<div id="pineapple"></div>-->
+       <!--<div id="radish"></div>-->
+       <!--<div id="tomato"></div>-->
+
+       
+       
+
+    </div>
+
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDlvq2SDAmGmfu5aOsBJ_ko15CooOWISDU",
+        authDomain: "kjhfr-433f3.firebaseapp.com",
+        databaseURL: "https://kjhfr-433f3.firebaseio.com",
+        projectId: "kjhfr-433f3",
+        storageBucket: "kjhfr-433f3.appspot.com",
+        messagingSenderId: "52426541510"
+      };
+      firebase.initializeApp(config);
+
+      var db = firebase.database();
+
+      var vid1img = db.ref("thkt/vid1/img");
+      var vid1date = db.ref("thkt/vid1/date");
+      var vid1ppl = db.ref("thkt/vid1/ppl");
+      var tomato = db.ref("thkt/vid1/tomato");
+      var pineapple = db.ref("thkt/vid1/pineapple");
+
+      var vid2img = db.ref("thkt/vid2/img");
+      var vid2date = db.ref("thkt/vid2/date");
+      var vid2ppl = db.ref("thkt/vid2/ppl");
+      var radish = db.ref("thkt/vid2/radish");
+      var potato = db.ref("thkt/vid2/potato");
+
+      //regression logs
+      var ppl1= db.ref("thkt/ppl1").orderByKey();
+      var ppl2= db.ref("thkt/ppl2").orderByKey();
+      var tar1=[];
+      var par1=[];
+      var tar2=[];
+      var par2=[];
+      function getgap(src){
+          var rst=0;
+          for (var i = 1; i <src.length; i++) 
+          {
+            var aft=src[i];
+            var bef=src[i-1];
+            var diff=aft-bef;
+            rst+=diff;
+          }
+          rst=rst/(src.length-1);
+        return rst
+      }
+      function updn(orgx,orgy,regx,regy)
+      {
+        gap=getgap(orgx);
+        rst="김주현과 친구들-CYA.AI 빅데이터 인공지능 분석 결과 "
+        rst+="<font color=\'green\'><b>"+(gap).toFixed(2).toString()+"초 후,</b></font> 총원이 ";
+        if(orgy[orgy.length-1]<regy[regy.length-1])
+        {
+          rst+="<font color=\'green\'><b>"+((regy[regy.length-1]-orgy[orgy.length-1]).toFixed(2).toString()+"명</b></font> 만큼 <font color=\'red\'><b>증가</b></font>할 것으로 파악합니다");
+        }
+        else if (orgy[orgy.length-1]>regy[regy.length-1]) {
+          rst+="<font color=\'green\'><b>"+((orgy[orgy.length-1]-regy[regy.length-1]).toFixed(2).toString()+"명</b></font> 만큼 <font color=\'blue\'><b>감소</b></font>할 것으로 파악합니다");
+        }
+        else
+        {
+          rst+="변동 없을 것으로 파악됩니다.";
+        }
+        return rst;
+      }
+      function patt(orgx,orgy,regx,regy)
+      {
+        rst="김주현과 친구들-CYA.AI 빅데이터 인공지능 분석 결과 "
+        if(regy[regy.length-1]>regy[regy.length-2])
+        {
+          rst+=("전체적으로는 <font color=\'red\'><b>상승세</b></font>입니다.");
+        }
+        else if (regy[regy.length-1]<regy[regy.length-2]) 
+        {
+          rst+=("전체적으로는 <font color=\'blue\'><b>하향세</b></font>입니다.");
+        }
+        else
+        {
+          rst+="총원 추세가 변동 없을 것으로 파악됩니다.";
+        }
+        return rst;
+      }
+      function ntparser(origin){
+      tstr=String(origin)      
+      tparsed=tstr.substring(0,2)+"시 "+tstr.substring(2,4)+"분 "+tstr.substring(4,6);
+      return tparsed
+      }
+      function labeler(reged){
+        var olabel=[];
+        var flabel=[];
+        for (var i = 0; i <reged.length; i++) {
+          if(i==reged.length-1){
+            flabel.push('미래 :'+ntparser(reged[i][0]));
+          }
+          else if(i==reged.length-2){
+            flabel.push('현재');
+            olabel.push(ntparser(reged[i][0]));
+          }
+          else{
+           flabel.push('과거'); 
+           olabel.push(ntparser(reged[i][0]));
+          }
+        }
+        return [olabel,flabel];
+      }
+      function futimer(src){
+          var rst=0;
+          for (var i = 1; i <src.length; i++) 
+          {
+            var aft=src[i];
+            var bef=src[i-1];
+            var diff=aft-bef;
+            rst+=diff;
+          }
+          rst=rst/(src.length-1);
+          futuretime=parseInt(src[src.length-1]+rst);
+          return futuretime;
+      }
+
+      ppl1.on("value",function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
+          var tl =childSnapshot.key;
+          var ppl= childSnapshot.val();
+          tar1.push(parseInt(String(tl).substring(8,14)));
+          par1.push(ppl);
+        });
+        while(tar1.length>11){
+            tar1.shift();
+          }
+        while(par1.length>11){
+            par1.shift();
+          }
+        regarr=[];
+        for (var i = 0; i<tar1.length; i++) 
+        {
+          regarr.push([tar1[i],par1[i]]);
+        }
+        regarr.push([futimer(tar1),null]);
+        var vid1reg = regression('polynomial', regarr,11);
+        labels=labeler(vid1reg.points);
+        
+          var olabel=labels[0];
+          var flabel=labels[1];
+
+            orgx=[]
+            orgy=[]
+            regx=[];
+            regy=[];
+
+        for (var i = 0; i <vid1reg.points.length; i++) 
+        {
+          if (i<vid1reg.points.length-1) {
+          orgx.push(regarr[i][0]);
+          orgy.push(regarr[i][1]);  
+          }
+          regx.push(vid1reg.points[i][0]);
+          regy.push(vid1reg.points[i][1]);
+        }
+        traceOrg=
+        {
+          textposition: 'top',
+          mode: 'markers+text',
+          x: orgx,
+          y: orgy,
+          name: '집계 원본',
+          text: olabel
+        }
+        traceReg=
+        {
+            x: regx,
+            y: regy,
+            name: '인공 지능',
+            type: 'scatter',
+            text: flabel
+        }
+        var data = [
+        traceOrg,
+        traceReg
+        ];
+
+        var layout = {
+          autosize: true,
+          title: '청과 코너 인원 현황 인공지능 분석결과',
+          xaxis: {
+            title: "청과 코너 인원 복잡도 추이",
+            showgrid: true,
+            showline: true,
+            zeroline: true,
+            showticklabels:false,
+          },
+          yaxis: {
+            title:'청과 코너 총원', 
+            showline: true
+          }
+        };
+         console.log(data);
+         Plotly.newPlot('analysis1', data,layout);
+         document.getElementById("ch1").innerHTML =updn(orgx,orgy,regx,regy);
+         document.getElementById("ch2").innerHTML =patt(orgx,orgy,regx,regy);
+      });
+
+      ppl2.on("value",function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
+          var tl =childSnapshot.key;
+          var ppl= childSnapshot.val();
+          tar2.push(parseInt(String(tl).substring(8,14)));
+          par2.push(ppl);
+        });
+         while(tar2.length>11){
+            tar2.shift();
+          }
+          while(par2.length>11){
+            par2.shift();
+          }
+          regarr=[];
+          for (var i = 0; i<tar2.length; i++) 
+          {
+            regarr.push([tar2[i],par2[i]]);
+          }
+          regarr.push([futimer(tar2),null]);
+          var vid2reg = regression('polynomial', regarr, 11);
+          labels=labeler(vid2reg.points);
+
+          var olabel=labels[0];
+          var flabel=labels[1];
+
+            orgx=[]
+            orgy=[]
+            regx=[];
+            regy=[];
+
+        for (var i = 0; i <vid2reg.points.length; i++) 
+        {
+          if (i<vid2reg.points.length-1) {
+          orgx.push(regarr[i][0]);
+          orgy.push(regarr[i][1]);  
+          }
+          regx.push(vid2reg.points[i][0]);
+          regy.push(vid2reg.points[i][1]);
+        }
+        traceOrg=
+        {
+          textposition: 'top',
+          mode: 'markers+text',
+          x: orgx,
+          y: orgy,
+          name: '집계 원본',
+          text: olabel
+        }
+        traceReg=
+        {
+            x: regx,
+            y: regy,
+            name: '인공 지능',
+            type: 'scatter',
+            text: flabel
+        }
+        var data = [
+        traceOrg,
+        traceReg
+        ];
+
+        var layout = {
+          autosize: true,
+          title: '야채 코너 인원 현황 인공지능 분석결과',
+          xaxis: {
+            title: "야채 코너 인원 복잡도 추이",
+            showgrid: true,
+            showline: true,
+            zeroline: true,
+            showticklabels:false,
+          },
+          yaxis: {
+            title:'야채 코너 총원', 
+            showline: true
+          }
+        };
+      Plotly.newPlot('analysis2', data,layout);
+      document.getElementById("vg1").innerHTML =updn(orgx,orgy,regx,regy);;
+      document.getElementById("vg2").innerHTML =patt(orgx,orgy,regx,regy);;
+      });
+      //console.log(tar1);
+      //console.log(tar2);
+
+//livevidfeed 
+    vid2img.on("value",function(snapshot) {
+      var childData= snapshot.val();
+      var src = "data:image/jpeg;base64,"+childData;
+      var newImage = document.createElement('img');
+      newImage.src = src;
+      newImage.width ="870";
+      document.getElementById("vid2feed").innerHTML =newImage.outerHTML;
+    });
+
+    vid1img.on("value",function(snapshot) {
+      var childData= snapshot.val();
+      var src = "data:image/jpeg;base64,"+childData;
+      var newImage = document.createElement('img');
+      newImage.src = src;
+      newImage.width ="870";
+      document.getElementById("vid1feed").innerHTML =newImage.outerHTML;
+    });
+
+//datetime
+    vid1date.on("value",function(snapshot) {
+      var childData= snapshot.val();
+      var timestring=("청과 코너 인원 집계시각<br>"+childData.substring(0,4)+"년 "+childData.substring(4,6)+"월 " +childData.substring(6,8)+"일 "+childData.substring(7,9)+"시 "+childData.substring(9,11)+"분 "+childData.substring(11,13)+"초");
+      document.getElementById("vid1datetime").innerHTML =timestring;
+    });
+    vid2date.on("value",function(snapshot) {
+      var childData= snapshot.val();
+      var timestring=("야채 코너 인원 집계시각<br>"+childData.substring(0,4)+"년 "+childData.substring(4,6)+"월 " +childData.substring(6,8)+"일 "+childData.substring(7,9)+"시 "+childData.substring(9,11)+"분 "+childData.substring(11,13)+"초");
+      document.getElementById("vid2datetime").innerHTML =timestring;
+    });
+//ppl
+    vid1ppl.on("value",function(snapshot) {
+      var childData= snapshot.val();
+      pplstring="현재 청과 코너 총원: <span class=\"badge pull-right\">"+childData+"명</span>"
+      document.getElementById("vid1ppl").innerHTML =pplstring;
+    });
+    vid2ppl.on("value",function(snapshot) {
+      var childData= snapshot.val();
+      pplstring="현재 야채 코너 총원: <span class=\"badge pull-right\">"+childData+"명</span>"
+      document.getElementById("vid2ppl").innerHTML =pplstring;
+    });
+
+//4-elements
+    potato.on("value",function(snapshot) {
+      var childData= snapshot.val();
+      descstr="감자 관심 인원: <span class=\"badge pull-right\">"+childData+"명</span>"
+      document.getElementById("potato").innerHTML =descstr;
+    });
+    tomato.on("value",function(snapshot) {
+      var childData= snapshot.val();
+      descstr="토마토 관심 인원: <span class=\"badge pull-right\">"+childData+"명</span>"
+      document.getElementById("tomato").innerHTML =descstr;
+    });
+    //
+    pineapple.on("value",function(snapshot) {
+      var childData= snapshot.val();
+      descstr="파인애플 관심 인원: <span class=\"badge pull-right\">"+childData+"명</span>"
+      document.getElementById("pineapple").innerHTML =descstr;
+    });
+    radish.on("value",function(snapshot) {
+      var childData= snapshot.val();
+      descstr="무 관심 인원: <span class=\"badge pull-right\">"+childData+"명</span>"
+      document.getElementById("radish").innerHTML =descstr;
+    });
+    //
+    </script>
+    </div>
+    
+    
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="js/holder.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-1.28.3.js"></script>
+    <!-- regression.js -->
+    <script src="https://Tom-Alexander.github.io/regression-js/jquery.flot.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/regression/1.4.0/regression.min.js"></script>
+    
+    </body>
+</html>
+    

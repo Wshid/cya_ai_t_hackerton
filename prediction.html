@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+  <title>CYA.AI- Artificial Intelligence Integrated Market Management Solution</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/carousel.css" rel="stylesheet">
+    <link href="css/menu.css?ver=033564" rel="stylesheet">
+    <link href="css/fiddle.css?ver=23241" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">
+    <link href="css/custom_navbar.css" rel="stylesheet">
+    <script type="text/javascript">
+      function urlpo() {
+     return ("http://1.214.89.7:8000/"+document.getElementById('po').value)+"/0";
+    }
+    function urlpi() {
+     return ("http://1.214.89.7:8000/"+document.getElementById('pi').value)+"/3";
+    }
+    function urlto() {
+     return ("http://1.214.89.7:8000/"+document.getElementById('to').value)+"/1";
+    }
+    function urlra() {
+     return ("http://1.214.89.7:8000/"+document.getElementById('ra').value)+"/2";
+    }
+    </script>
+  </head>
+<!-- NAVBAR
+================================================== -->
+  <body>
+        <div class="navbar-wrapper">
+          <div class="container">
+    
+            <nav class="navbar navbar-inverse navbar-static-top">
+              <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="main.html">CYA.AI</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                    <li><a href="main.html">김주현과 친구들-CYA.AI</a></li>
+                    <li><a href="video.html">Realtime Video Deeplearning</a></li>
+                    <li><a href="dashboard.html">Bigdata Analysis Dashboard</a></li>
+                    <li class="active"><a href="prediction.html">AI Order Prediction</a></li>
+                <!--
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Nav header</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li>
+                -->
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+    
+    <div class="jumbotron">
+      <div class="container font_white">
+        <h2>AI Order Prediction : Effecient/Proficient Order Prediction by A.I. better than Human</h2>
+        <p>딥러닝 기반 인공지능을 통해 농산물 발주량을 사람보다 정확하게 예측합니다.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      </div>
+    </div>
+    <!--
+    <div class="container">
+      <p id="counter1"></p>
+      <p id="counter2"></p>
+      <p id="counter3"></p>
+      <p id="counter4"></p>
+    </div>
+    -->
+    
+    <div class="container">
+            <h3>휴대폰 번호를 입력하시고 발주 정보를 SMS로 받으세요</h3>
+
+       <div id="custom-search-input">
+               <label for="usr">감자 </label>
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control input-lg" id="po" placeholder="01028429981" value="01028429981" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button" onClick="window.open(urlpo());">
+                            <i class="glyphicon glyphicon-envelope"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+       <div id="custom-search-input">
+        <label for="usr">토마토 </label>
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control input-lg" id="to" placeholder="01028429981" value="01028429981" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button" onClick="window.open(urlto());">
+                            <i class="glyphicon glyphicon-envelope"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+       <div id="custom-search-input">
+        <label for="usr">무 </label>
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control input-lg" id="ra" placeholder="01028429981" value="01028429981" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button" onClick="window.open(urlra());">
+                            <i class="glyphicon glyphicon-envelope"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+       <div id="custom-search-input">
+        <label for="usr">파인애플 </label>
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control input-lg" id="pi" placeholder="01028429981" value="01028429981" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button" onClick="window.open(urlpi());">
+                            <i class="glyphicon glyphicon-envelope"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+
+      <div class="pre_title font_white">
+        <h3>예측할 품목을 선택하여 주세요(Please Choose Product want predict)</h3>
+        <hr>
+      </div>
+      <div class="pre_body font_white">
+        <input type="hidden" id="product" name="product">
+        <div class="row">
+          <div id="potato" class="col-lg-3 proj-div" data-toggle="modal" data-target="#modal_감자">
+            감자
+          </div>
+          <div id="tomato" class="col-lg-3 proj-div" data-toggle="modal" data-target="#modal_토마토">
+            토마토
+          </div>
+          <div id="pineapple" class="col-lg-3 proj-div" data-toggle="modal" data-target="#modal_파인애플">
+            파인애플
+          </div>
+          <div id="radish" class="col-lg-3 proj-div" data-toggle="modal" data-target="#modal_무">
+            무
+          </div>
+          
+        </div>
+      </div>
+  
+  
+    <div class="pred_container">
+      <div class="pred_inner_container potato disable">
+        <div class="pre_title font_white">
+          <h3>감자 예측(Predict Potato Value)</h3>
+          <hr>
+        </div>
+        <!--<h3>Predict Value</h3>-->
+        
+        <div class="pre_title pred_value">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="pred_day font_white">오늘 필요 발주량</div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_result" id="potato1"></div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_day font_white">오늘 예상 판매량</div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_result" id="prpotato1"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="pred_day font_white">내일 필요 발주량</div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_result" id="potato2"></div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_day font_white">내일 예상 판매량</div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_result" id="prpotato2"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="pred_day font_white">모레 필요 발주량</div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_result" id="potato3"></div>  
+            </div>
+            <div class="col-md-3">
+              <div class="pred_day font_white">모레 예상 판매량</div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_result" id="prpotato3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+          <div class="pred_inner_container tomato disable">
+        <div class="pre_title font_white">
+          <h3>토마토 예측(Predict Tomato Value)</h3>
+          <hr>
+        </div>
+        <!--<h3>Predict Value</h3>-->
+        
+        <div class="pre_title pred_value">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="pred_day font_white">오늘 발주량</div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_result" id="tomato1"></div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_day font_white">오늘 예상 판매량</div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_result" id="prtomato1"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="pred_day font_white">내일 발주량</div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_result" id="tomato2"></div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_day font_white">내일 예상 판매량</div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_result" id="prtomato2"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="pred_day font_white">모레 발주량</div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_result" id="tomato3"></div>  
+            </div>
+            <div class="col-md-3">
+              <div class="pred_day font_white">모레 예상 판매량</div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_result" id="prtomato3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+          <div class="pred_inner_container pineapple disable">
+        <div class="pre_title font_white">
+          <h3>파인애플 예측(Predict Pineapple Value)</h3>
+          <hr>
+        </div>
+        <!--<h3>Predict Value</h3>-->
+        
+        <div class="pre_title pred_value">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="pred_day font_white">오늘 발주량</div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_result" id="pineapple1"></div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_day font_white">오늘 예상 판매량</div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_result" id="prpineapple1"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="pred_day font_white">내일 발주량</div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_result" id="pineapple2"></div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_day font_white">내일 예상 판매량</div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_result" id="prpineapple2"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="pred_day font_white">모레 발주량</div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_result" id="pineapple3"></div>  
+            </div>
+            <div class="col-md-3">
+              <div class="pred_day font_white">모레 예상 판매량</div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_result" id="prpineapple3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+          <div class="pred_inner_container radish disable">
+        <div class="pre_title font_white">
+          <h3>무 예측(Predict Radish Value)</h3>
+          <hr>
+        </div>
+        <!--<h3>Predict Value</h3>-->
+        
+        <div class="pre_title pred_value">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="pred_day font_white">오늘 발주량</div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_result" id="radish1"></div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_day font_white">오늘 예상 판매량</div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_result" id="prradish1"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="pred_day font_white">내일 발주량</div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_result" id="radish2"></div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_day font_white">내일 예상 판매량</div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_result" id="prradish2"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="pred_day font_white">모레 발주량</div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_result" id="radish3"></div>  
+            </div>
+            <div class="col-md-3">
+              <div class="pred_day font_white">모레 예상 판매량</div>
+            </div>
+            <div class="col-md-3">
+              <div class="pred_result" id="prradish3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+      
+     
+    </div>
+    
+    
+    
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="js/holder.js"></script>
+    <script src="js/fiddle.js?ver=6"></script>
+    <script src="js/menu.js?ver=4322355"></script>
+    <script src="js/check.js"></script>
+    <script src="js/modal.js?ver=5555665"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    </body>
+</html>
+    
