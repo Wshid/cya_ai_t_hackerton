@@ -11,11 +11,14 @@
     - 집계된 통계자료를 활용한 빅데이터를 분석하여 매출에 연관된 다양한 정보를 제공한다.
 ##### AI Order Prediction
     - 4개의 품목에 대하여, 미래 수요를 예측한 자료를 제공한다.
-    
+
 ### Tech
 - Tensorflow
 - Elastic Stack(ElasticSearch, Logstash, Kibana, FileBeat)
 - Caffe2
 - OpenCV
 - WEB(HTML5, CSS3, JavaScript ES5, JQuery)
-    
+
+
+### Application URL
+https://cyaai-7d737.firebaseapp.com/
